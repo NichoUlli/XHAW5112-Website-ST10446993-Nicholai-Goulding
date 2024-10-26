@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees | Empowering The Nation</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <img src="_images/empowering_the_nation_logo.png" alt="Empowering The Nations" widtd="150" height="150">
+    <nav id="topLinks">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="summary_courses.html">Summary Courses</a></li>
+            <li><a href="six_month_course.html">Six Month Course</a></li>
+            <li><a href="six_week_course.html">Six Week Course</a></li>
+            <li class="currentPage">Fees</li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav> 
+
+    <script>
+        function calculateTotal() {
+            try {
+                const courses = document.querySelectorAll('input[name="course"]:checked');
+                let totalFee = 0;
+
+                courses.forEach(course => {
+                    const fee = parseFloat(course.dataset.fee);
+                    if (isNaN(fee)) {
+                        throw new Error('Invalid fee for course: ' + course.value);
+                    }
+                    totalFee += fee;
+                });
+
+                let discount = 0;
+                if (courses.length === 2) {
+                    discount = 0.05;
+                } else if (courses.length === 3) {
+                    discount = 0.1;
+                } else if (courses.length > 3) {
+                    discount = 0.15;
+                }
+
+                totalFee -= totalFee * discount;
+
+                totalFee *= 1.15;
+
+                document.getElementById('totalFee').textContent = `Total Fee: ${totalFee.toFixed(2)}`;
+
+            } catch (error) {
+                alert('Error calculating total fee: ' + error.message);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <div id="fees">
+            <h1>Calculate Total Fees</h1>
+
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <h2>Select Courses</h2>
+                <label><input type="checkbox" name="course" data-fee="1500"> First Aid (R1500)</label><br>
+                <label><input type="checkbox" name="course" data-fee="1500"> Sewing (R1500)</label><br>
+                <label><input type="checkbox" name="course" data-fee="1500"> Landscaping (R1500)</label><br>
+                <label><input type="checkbox" name="course" data-fee="1500"> Life Skills (R1500)</label><br>
+                <label><input type="checkbox" name="course" data-fee="750"> Child Minding (R750)</label><br>
+                <label><input type="checkbox" name="course" data-fee="750"> Cooking (R750)</label><br>
+                <label><input type="checkbox" name="course" data-fee="750"> Garden Maintenance (R750)</label><br>
+
+                <button type="button" onclick="calculateTotal()">Calculate Total Fee</button>
+
+                <p id="totalFee"></p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <nav id="bottomLinks">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="summary_courses.html">Summary Courses</a></li>
+                <li><a href="six_month_course.html">Six Month Course</a></li>
+                <li><a href="six_week_course.html">Six Week Course</a></li>
+                <li class="currentPage">Fees</li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <p>
+            <script>
+                var theDate = new Date()
+                document.write("&copy; " + theDate.getFullYear())
+                document.write(" - Empowering The Nation | Last modified: ")
+                var theModifiedDate = new Date(document.lastModified)
+                document.write(theModifiedDate.toDateString())
+            </script>
+            <br>Powered by "IIE MSA" Web Hosting
+        </p> 
+    </footer>
+</body>
+
+</html>

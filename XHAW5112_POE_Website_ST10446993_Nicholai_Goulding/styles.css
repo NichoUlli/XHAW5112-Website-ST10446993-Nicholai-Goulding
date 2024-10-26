@@ -1,0 +1,113 @@
+body {
+    background-color: #a0e957;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    background-image: url(_images/wallpaper.jpg);
+}
+
+#wrapper {
+    width: 1250px;
+    background-color: #f9db89;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fees {
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#homeInfo {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#monthList {
+    text-align: center;
+}
+
+#weekList {
+    text-align: center;
+}
+
+#topLinks {
+    position: absolute;
+    width: 500px;
+    top: 50px;
+    right: 30px;
+}
+
+#topLinks li {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+a:link {
+    color: #ee4a09;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #7061b300;
+}
+
+a:hover {
+    color: #9ace4d;
+}
+
+.currentPage {
+    color: #ee4a09;
+    border-bottom: solid thin #ee4a09;
+}
+
+.clearFix {
+    clear: both;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+#bottomLinks li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#google1 {
+    float: right;
+    padding-right: 10px;
+}
+
+#google {
+    padding-left: 10px;
+}
+
+#aids {
+    float: left;
+}
+
+#sews {
+    float: right;
+}
+
+#scapes {
+    float: left;
+}
+
+#skills {
+    float: right;
+}
